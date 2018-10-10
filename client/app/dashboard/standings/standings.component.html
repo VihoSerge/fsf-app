@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="title"> Classements</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>
+                Equipe
+              </th>
+              <th class="text-right">
+                J
+              </th>
+              <th class="text-right">
+                V
+              </th>
+              <th class="text-right">
+                N
+              </th>
+              <th class="text-right">
+                D
+              </th>
+              <th class="text-right">
+                BP
+              </th>
+              <th class="text-right">
+                BC
+              </th>
+              <th class="text-right">
+                BD
+              </th>
+              <th class="text-right">
+                PTS
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let standing of standings; let i = index">
+                <td>
+                    <span style="font-size: 10px; padding-right: 15px;">{{ i + 1}}</span> <span style="font-size: 16px;">{{standing.team.name}}</span>
+                </td>
+                <td class="text-right">
+                  {{standing.played}}
+                </td>
+                <td class="text-right">
+                  {{standing.won}}
+                </td>
+                <td class="text-right">
+                  {{standing.drawn}}
+                </td>
+                <td class="text-right">
+                  {{standing.lost}}
+                </td>
+                <td class="text-right">
+                  {{standing.goalsFor}}
+                </td>
+                <td class="text-right">{{standing.goalsAgainst}}</td>
+                <td class="text-right">{{standing.goalDifference}}</td>
+                <td class="text-right">{{standing.points}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

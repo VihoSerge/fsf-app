@@ -1,3 +1,59 @@
-<p>
-  edit-team works!
-</p>
+<div class="row">
+  <div class="col-md-8" style="margin: auto;">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Nouvelle equipe
+          <button class="add-btn cancel-btn" style="float: right; top: 0; border-radius: 50%; border: 0; vertical-align: middle; padding: 5px; width: 40px; height: 40px; line-height: 40px;"
+            (click)='onCancel()' >
+            <i class="now-ui-icons ui-1_simple-remove"></i>
+          </button>
+        </h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label> Nom de l'equipe </label>
+                <input type="text" class="form-control" placeholder="Equipe" value="" formControlName="name" required>
+              </div>
+            </div>
+            <div class="col-md-3 px-1">
+              <div class="form-group">
+                <label> &nbsp;</label>
+                <input type="submit" class="form-control add-btn" value="Ajouter" [disabled]="form.invalid">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="error-msg" *ngIf="error">
+  {{errMsg}}
+</div>
+
+<div class="success" *ngIf="success">
+    {{successMsg}}
+  </div>
+
+<style>
+.error-msg, .success {
+  background-color: #dd2833;
+  padding: 20px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 18px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 30px;
+
+}
+
+.success {
+  background-color: #1a8244;
+}
+</style>

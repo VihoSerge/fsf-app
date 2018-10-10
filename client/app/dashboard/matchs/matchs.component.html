@@ -2,22 +2,20 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h5 class="title">Equipes Ligue 1 Sénégalaise 
+        <h5 class="title">Scores des matchs 
           <button class="add-btn" style="float: right; top: 0; border-radius: 50%; border: 0; vertical-align: middle; padding: 5px; width: 40px; height: 40px; line-height: 40px;"
             (click)='onNew()' >
             <i class="now-ui-icons ui-1_simple-add"></i>
           </button>
         </h5>
-        <p class="category">
-          {{teams.length}} Equipes
+        <p class="category"> {{matchs.length}} Matchs
         </p>
       </div>
-      <div class="card-body all-icons">
+      <div class="card-body all-icons matchs">
         <div class="row">
-          <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6" *ngFor="let team of teams" >
+          <div class="font-icon-list col-lg-3 col-md-3 col-sm-4 col-xs-6 col-xs-6"  *ngFor="let match of matchs">
             <div class="font-icon-detail">
-              <i class="now-ui-icons education_atom"></i>
-              <p> {{team.name}} </p>
+              <span>{{match.team1.name}}</span> {{match.score1}}  - {{match.score2}} <span>{{match.team2.name}}</span>
             </div>
           </div>
         </div>

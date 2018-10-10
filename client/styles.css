@@ -11,3 +11,46 @@
     font-size: 80px;
     font-weight: bold;
   }
+
+  .add-btn {
+    background-color: #1a8244;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .add-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px #1a8244 solid;
+  }
+
+  .cancel-btn {
+    background-color: #ffffff;
+    color: #000000;
+    opacity: 0.5;
+  }
+
+  .cancel-btn:hover {
+    background-color: #dddddd;
+  }
+
+  .matchs {
+    min-height: initial;
+  }
+
+  .all-icons .font-icon-detail span {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .table td, .table th {
+    padding: .75rem!important;
+  }
+
+  .all-icons .font-icon-detail p {
+    color: #000000;
+}
+
+.all-icons .font-icon-detail img {
+    width: 90px;
+}

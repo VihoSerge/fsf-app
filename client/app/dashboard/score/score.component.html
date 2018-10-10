@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-8" style="margin: auto;">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Score de match
+          <button class="add-btn cancel-btn" style="float: right; top: 0; border-radius: 50%; border: 0; vertical-align: middle; padding: 5px; width: 40px; height: 40px; line-height: 40px;"
+            (click)='onCancel()' >
+            <i class="now-ui-icons ui-1_simple-remove"></i>
+          </button>
+        </h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-md-3 pr-1">
+              <div class="form-group">
+                <label> Domicile </label>
+                <select id="" class="form-control" required formControlName="team1">
+                  <option value="">Equipe à domicile </option>
+                  <option [value]="team._id" *ngFor="let team of teams" > {{team.name}} </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-2 pr-1">
+              <div class="form-group">
+                <label> But </label>
+                <input type="number" class="form-control" placeholder="0" value="" formControlName="score1" min="0" required>
+              </div>
+            </div>
+            <div class="col-md-2 pr-1">
+              <div class="form-group">
+                <label> But </label>
+                <input type="number" class="form-control" placeholder="0" value="" formControlName="score2" min="0" required>
+              </div>
+            </div>
+            <div class="col-md-3 pr-1">
+              <div class="form-group">
+                <label> Extérieur </label>
+                <select id="" class="form-control" required formControlName="team2">
+                  <option value="">Equipe à l'extérieur</option>
+                  <option [value]="team._id" *ngFor="let team of teams | filter : form.value.team1" > {{team.name}} </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-1 px-1">
+              <div class="form-group">
+                <label> &nbsp;</label>
+                <button type="submit" [disabled]="form.invalid" class="form-control add-btn">
+                  <i class="now-ui-icons ui-1_check"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
